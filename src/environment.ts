@@ -1,27 +1,27 @@
-const baseRoute: string = 'http://localhost:8000';
 
 // tslint:disable-next-line no-default-export
 export default {
   debug: true,
   testing: true,
+  baseRoute:  'http://localhost:8000',
   processlist: {
     pageLimit: 10,
   },
   processengine: {
     poolingInterval: 5000,
     routes: {
-      processes: `${baseRoute}/datastore/ProcessDef`,
-      startProcess: `${baseRoute}/processengine/start`,
-      processInstances: `${baseRoute}/datastore/Process`,
-      messageBus: `${baseRoute}/mb`,
-      iam: `${baseRoute}/iam`,
-      userTasks: `${baseRoute}/datastore/UserTask`,
+      processes: `${this.baseRoute}/datastore/ProcessDef`,
+      startProcess: `${this.baseRoute}/processengine/start`,
+      processInstances: `${this.baseRoute}/datastore/Process`,
+      messageBus: `${this.baseRoute}/mb`,
+      iam: `${this.baseRoute}/iam`,
+      userTasks: `${this.baseRoute}/datastore/UserTask`,
     },
   },
   events: {
     xmlChanged: 'xmlChanged',
   },
   consumerClient: {
-    baseRoute: baseRoute,
+    baseRoute: this.baseRoute,
   },
 };

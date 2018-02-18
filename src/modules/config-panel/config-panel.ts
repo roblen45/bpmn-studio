@@ -19,7 +19,7 @@ export class ConfigPanel {
   }
 
   public updateSettings(): void {
-    environment.consumerClient.baseRoute = this.config.baseRoute;
+    environment.baseRoute = this.config.baseRoute;
     window.localStorage.setItem('baseRoute', this.config.baseRoute);
     this.consumerClient.updateConfig(this.config);
     toastr.success('Sucessfully saved settings!');
